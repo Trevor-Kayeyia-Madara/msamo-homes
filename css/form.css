@@ -58,6 +58,17 @@ input[type="tel"] {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+h2 {
+    color: #02346d;
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.center {
+    text-align: center; /* Center align the heading */
+}
 .back-link {
     display: block;
     margin-bottom: 20px;
