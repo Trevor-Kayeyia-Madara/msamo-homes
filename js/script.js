@@ -12,9 +12,9 @@ window.addEventListener('load', () => {
             loginForm.style.display = 'flex';
             setTimeout(() => {
                 loginForm.classList.add('show');
-            }, 50); // Slight delay to trigger transition
-        }, 1000); // Match this with the transition duration of loader
-    }, 3000); // 3 seconds delay for loading spinner
+            }, 20); // Slight delay to trigger transition
+        }, 500); // Match this with the transition duration of loader
+    }, 1000); // 3 seconds delay for loading spinner
 });
 
 // Handle form submission
