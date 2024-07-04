@@ -1,57 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PROPERTY MSAMO HOMES</title>
-    <link rel="stylesheet" href="./css/form.css" type="text/css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0b0b45;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background-color: #1b1b6e;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .card .price {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        .card .description {
+            font-size: 14px;
+            margin: 10px 0;
+        }
+        .card .features {
+            text-align: left;
+            margin: 20px 0;
+        }
+        .card .features li {
+            margin: 5px 0;
+        }
+        .card button {
+            background-color: #7a40f2;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .card button.buy-now {
+            background-color: #ffffff;
+            color: #1b1b6e;
+        }
+        .card input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            text-align: center;
+        }
+    </style>
+    <title>Pricing Card</title>
 </head>
 <body>
     <a href="dashboard.html" class="back-link">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
             <path fill="currentColor" d="M20 11H7.41l2.3-2.29A1 1 0 0 0 8.29 7.3l-4 4a1 1 0 0 0 0 1.4l4 4a1 1 0 0 0 1.42-1.42L7.41 13H20a1 1 0 0 0 0-2z"/>
         </svg>
-       
+        
     </a>
-    <h2 class="center">LIST A PROPERTY FORM</h2>
-    <form id="property-form">
-        <div class="form-group">
-            <label for="city">City:</label>
-            <select id="city" name="city" onchange="updateAreas()">
-                <option value="">Select a city</option>
-                <option value="Nairobi">Nairobi</option>
-                <option value="Mombasa">Mombasa</option>
-                <option value="Kisumu">Kisumu</option>
-                <option value="Nakuru">Nakuru</option>
-                <option value="Kwale">Kwale</option>
-                <option value="Machakos">Machakos</option>
-            </select>
+    <div class="card">
+        <div class="header">
+            <span>BUY LISTING TOKEN</span>
         </div>
-
-        <div class="form-group">
-            <label for="area">Area:</label>
-            <select id="area" name="area">
-                <!-- Areas options will be populated dynamically based on city selection -->
-            </select>
+        <div class="price">
+            KSH 3000.00
         </div>
-
-        <div class="form-group">
-            <label for="description">Description:</label>
-            <textarea id="description" name="description" rows="4" cols="50"></textarea>
+        <div class="description">
+            To be able to list property you need to buy this token for listing of unlimited property for one month.
         </div>
-
-        <div class="form-group">
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" placeholder="Enter phone number">
+        <div class="features">
+            <ul>
+                <li>Unlimited listing for 30 Days</li>
+                <li>Unlimited Access to Stats</li>
+                <li>Real time posting</li>
+                <li>Free SEO</li>
+            </ul>
         </div>
-
-        <div class="form-group">
-            <label for="price">Price of Land:</label>
-            <input type="number" id="price" name="price" min="0" step="any">
-        </div>
-
-        <button type="submit">Submit</button>
-    </form>
-    <script src="./js/property.js" type="text/javascript"></script>
+        <p>Pay Using Mpesa<br><img src="https://pbs.twimg.com/ext_tw_video_thumb/1181852139011936256/pu/img/1UCUl2bSj2RCyq6H.jpg" width="120px" height="auto"></p>
+        <label for="number">Mobile Number</label><br>
+        <input id="number" name="number" placeholder="Enter Phone Number" class="form" oninput="formatPhoneNumber(event)"><br>
+        <button type="submit" class="buy-now">Buy Now</button>
+    </div>
+    <script type="./js/property.js"></script>
+    <script>
+        function formatPhoneNumber(input) {
+            const inputField = input.target;
+            let formattedInputValue = inputField.value.replace(/\D/g, '');
+            
+            if (formattedInputValue.startsWith('254')) {
+                formattedInputValue = formattedInputValue.slice(3);
+            }
+        
+            const maxLength = 9;
+            const finalInputValue = formattedInputValue.slice(0, maxLength);
+            
+            inputField.value = `254${finalInputValue}`;
+        }
+        
+        // Function to handle form submission
+        function handleFormSubmission(event) {
+            event.preventDefault(); // Prevent default form submission
+        
+            // Collect form data
+            let formData = new FormData(event.target);
+        
+            // Example: Log form data to console
+            for (let pair of formData.entries()) {
+                console.log(pair[0] + ': ' + pair[1]);
+            }
+        
+            // Example: Redirect to dashboard.html after form submission
+            window.location.href = 'dashboard.html'; // Replace with your actual redirect URL
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('buy').addEventListener('submit', handleFormSubmission);
+        });
+    </script>
 </body>
 </html>
