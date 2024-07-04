@@ -8,7 +8,37 @@
         <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet">
     </head>
     <body>
-       
+        <header>
+            <div class="logo">
+                <img src="./images/logo.jpg" alt="Logo">
+            </div>
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </header>
+        <aside class="sidebar" id="sidebar">
+            <ul>
+                <li><a href="#">Add Property</a></li>
+                <li><a href="#">Buy Listing Tokens</a></li>
+                <li><a href="#">Listed Properties</a></li>
+                <li><a href="index.html">Logout</a></li>
+            </ul>
+        </aside>
+        <main>
+            <section class="summary-container">
+                <div class="listed-properties">
+                    <h2>Listed Properties</h2>
+                    <p>Number of Listed Properties: <span id="listed-count">10</span></p>
+                </div>
+                <div class="remaining-tokens">
+                    <h2>Remaining Tokens</h2>
+                    <p>Number of Remaining Tokens: <span id="remaining-tokens">5</span></p>
+                </div>
+            </section>
+            <!-- Other content for main section -->
+        </main>
         <script src="./js/landlord.js"></script>
     </body>
 </html>
