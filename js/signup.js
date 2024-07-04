@@ -2,7 +2,7 @@
 window.addEventListener('load', () => {
     setTimeout(() => {
         const loader = document.getElementById('loader');
-        const loginForm = document.getElementById('tenant');
+        const loginForm = document.getElementById('signup-form');
 
         // Fade out loader
         loader.style.transition = 'opacity 0.25s'; // Reduced transition duration

@@ -2,8 +2,9 @@
 window.addEventListener('load', () => {
     setTimeout(() => {
         const loader = document.getElementById('loader');
-        const loginForm = document.getElementById('tenant');
+        const loginForm = document.getElementById('login-form');
 
+        // Fade out loader
         // Fade out loader
         loader.style.transition = 'opacity 0.25s'; // Reduced transition duration
         loader.style.opacity = '0';
@@ -18,7 +19,6 @@ window.addEventListener('load', () => {
         }, 250); // Match this with the transition duration of loader
     }, 500); // Reduced delay for loading spinner
 });
-
 // Handle form submission
 document.getElementById('loginForm').addEventListener('submit', (event) => {
     event.preventDefault(); // Prevent the default form submission
