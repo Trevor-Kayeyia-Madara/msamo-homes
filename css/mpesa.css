@@ -1,0 +1,55 @@
+/* mpesa.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #02346d;
+}
+
+ol, ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.payment-details {
+    margin-top: 20px;
+}
+#payment-success {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #02346d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#payment-success:hover {
+    background-color: #001e4e;
+}
+
+.payment-details ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.payment-details ul li {
+    margin-bottom: 5px;
+}
+
