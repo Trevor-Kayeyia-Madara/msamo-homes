@@ -49,5 +49,5 @@ updateAreas();
 // Form submission handling
 document.getElementById('property-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent the default form submission
-    window.location.href = 'dashboard.html'; // Redirect to the landlord dashboard
+    window.location.href = 'landlord-payment.html'; // Redirect to the landlord dashboard
 });

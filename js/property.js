@@ -60,5 +60,5 @@ document.getElementById('property-form').addEventListener('submit', function(eve
     }
 
     // Example: Redirect to dashboard.html after form submission
-    window.location.href = 'dashboard.html'; // Replace with your actual redirect URL
+    window.location.href = 'payment.html'; // Replace with your actual redirect URL
 });
