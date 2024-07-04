@@ -12,7 +12,7 @@ document.getElementById('loginForm').addEventListener('submit', (event) => {
 
 function selectUserType(userType) {
     if (userType === 'Landlord' || userType === 'Property Owner') {
-        window.location.href = 'signin.html'; // Navigate to login for Landlord or Property Owner
+        window.location.href = 'login.html'; // Navigate to login for Landlord or Property Owner
     } else if (userType === 'Tenant') {
         window.location.href = 'tenant.html'; // Navigate to tenant_dashboard.html for Tenant
     } else {
