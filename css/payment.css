@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.payment-container {
+    text-align: center;
+}
+
+.payment-box {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.payment-box h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.payment-options {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.payment-options label {
+    margin-right: 20px;
+}
+
+.payment-options input[type="radio"] {
+    margin-right: 5px;
+    cursor: pointer;
+}
+.confirmed-button {
+    background-color: #28a745; /* Green color */
+    color: #fff; /* White text */
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.confirmed-button:hover {
+    background-color: #218838; /* Darker shade of green */
+}
+.payment-options input[type="radio"]:checked {
+    transform: scale(1.2); /* Example of visual feedback */
+}

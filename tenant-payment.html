@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenant Payment</title>
+    <link rel="stylesheet" href="./css/payment.css" type="text/css">
+</head>
+<body>
+    <div class="payment-container">
+        <div class="payment-box">
+            <h2>PAY KSH 2000</h2>
+            
+            <div class="payment-options">
+                <label for="mpesa-paybill">
+                    <input type="radio" id="mpesa-paybill" name="payment-method" value="mpesa" checked>
+                    MPESA PAYBILL
+                </label>
+                
+                <label for="visa-card">
+                    <input type="radio" id="visa-card" name="payment-method" value="visa">
+                    VISA CARD
+                </label>
+            </div>
+
+            <button class="confirmed-button" onclick="redirectToDashboard()">Confirmed Already Paid</button>
+        </div>
+    </div>
+
+    <script>
+        function redirectToDashboard() {
+            window.location.href = "tenant.html";
+        }
+    </script>
+</body>
+</html>

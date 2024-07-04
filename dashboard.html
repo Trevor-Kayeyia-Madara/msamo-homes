@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LANDLORD & PROPERTY OWNER - MSAMO HOMES</title>
+    <link rel="stylesheet" href="./css/landlord.css" type="text/css" />
+</head>
+<body>
+    <div id="loader" class="loader-container">
+        <img src="./images/logo.jpg" alt="Logo" class="logo">
+        <div class="spinner"></div>
+    </div>
+    
+    <div id="dashboard-container" class="dashboard-container">
+        <header class="dashboard-header">
+            <div class="logo-container">
+                <img src="./images/logo.jpg" alt="Logo" class="logo">
+            </div>
+            <div class="avatar-container">
+                <img src="./images/profile.png" alt="Avatar" class="avatar">
+            </div>
+        </header>
+        
+        <main class="dashboard-main">
+            <h2 id="title">Landlord Dashboard</h2>
+            <div class="actions">
+                <div class="action">
+                    <a id="add-property" href="#" class="action-link button">Add Property for Landlord</a>
+                </div>
+                <div class="action">
+                    <a id="modify-property" href="#" class="action-link button">Add Property tor Sale(Land or Home)</a>
+                </div>
+            </div>
+            
+            
+            <div class="property-cards">
+                <!-- Sample property card -->
+                <div class="property-card">
+                    <img src="./images/image-3.jpg" alt="Property Image" class="property-image">
+                    <div class="property-details">
+                        <h3 class="property-title">Property Title</h3>
+                        <p class="property-location">Location: Nairobi</p>
+                        <p class="property-description">Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p class="property-bedrooms">Bedrooms: 3</p>
+                        <p class="property-price">Price per month: $1200</p>
+                    </div>
+                </div>
+                <!-- Repeat the above card structure for each property -->
+            </div>
+        </main>
+    </div>
+    
+    <script src="./js/landlord.js"></script>
+</body>
+</html>
