@@ -7,8 +7,9 @@
 
 body {
     display: flex;
+    flex-direction: column;
     height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden; /* Ensure no horizontal overflow */
 }
 
 header {
@@ -29,18 +30,7 @@ header {
 }
 
 .hamburger-menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 24px;
-    width: 30px;
-    cursor: pointer;
-}
-
-.hamburger-menu .bar {
-    height: 3px;
-    width: 100%;
-    background-color: #fff;
+    display: none; /* Hidden by default on larger screens */
 }
 
 .sidebar {
@@ -49,11 +39,15 @@ header {
     background: #444;
     color: #fff;
     position: fixed;
-    top: 0;
+    top: 60px;
     left: -250px;
     transition: left 0.3s ease;
     z-index: 999;
-    padding-top: 60px;
+    padding-top: 20px;
+}
+
+.sidebar.show {
+    left: 0;
 }
 
 .sidebar ul {
@@ -76,6 +70,7 @@ header {
 .sidebar ul li a:hover {
     background: #555;
 }
+
 h1 {
     text-align: center;
     color: #333;
@@ -86,8 +81,9 @@ form {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    margin-top: 50px;
+    width: 100%;
+    max-width: 300px; /* Limit width on larger screens */
+    margin: 20px auto; /* Center align and provide margin */
 }
 
 label {
@@ -119,4 +115,44 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: #218838;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 768px) {
+    body {
+        overflow-x: auto; /* Allow horizontal scrolling on small screens */
+    }
+
+    .hamburger-menu {
+        display: block;
+        margin-right: 20px;
+    }
+
+    .sidebar {
+        width: 200px;
+        left: -200px;
+        padding-top: 60px;
+    }
+
+    .sidebar.show {
+        left: 0;
+    }
+
+    form {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .sidebar {
+        width: 150px;
+        left: -150px;
+        padding-top: 60px;
+    }
+
+    .sidebar.show {
+        left: 0;
+    }
 }
