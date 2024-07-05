@@ -1,8 +1,9 @@
 <?php
 $hostname = "localhost"; // your server name
-$username = "root"; // your database username
-$password = "RX3cttemQk5NVHU8"; // your database password
-$dbname = "property_db"; // your database name
+$username = "invodtec_msamohomes"; // your database username
+$password = "xo5[~&yzIK32"; // your database password
+$dbname = "invodtec_property_db"; // your database name
+
 
 // Create connection
 $conn = new mysqli($hostname, $username, $password, $dbname);
