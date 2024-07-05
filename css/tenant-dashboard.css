@@ -81,6 +81,16 @@ body {
     vertical-align: middle; /* Align the icon vertically */
     margin-right: 5px; /* Space between icon and text */
 }
+#properties-container {
+    margin-top: 20px;
+}
+
+.property-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
 #search-location {
     width: 100%;
     padding: 10px;

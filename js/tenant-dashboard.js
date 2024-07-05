@@ -43,3 +43,21 @@ window.addEventListener('load', () => {
         }, 250); // Match this with the transition duration of loader
     }, 500); // Reduced delay for loading spinner
 });
+document.addEventListener('DOMContentLoaded', () => {
+    fetch('./server/get-properties.php')
+        .then(response => response.json())
+        .then(properties => {
+            const container = document.getElementById('properties-container');
+            properties.forEach(property => {
+                const card = document.createElement('div');
+                card.className = 'property-card';
+                card.innerHTML = `
+                    <h3>${property.address}</h3>
+                    <p>Type: ${property.type}</p>
+                    <p>Price: $${property.price} per month</p>
+                `;
+                container.appendChild(card);
+            });
+        })
+        .catch(error => console.error('Error fetching properties:', error));
+});
