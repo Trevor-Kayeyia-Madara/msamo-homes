@@ -61,3 +61,50 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => console.error('Error fetching properties:', error));
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const searchForm = document.getElementById('property-search-form');
+    const searchButton = document.getElementById('search-button');
+    const propertiesContainer = document.getElementById('properties-container');
+
+    // Function to fetch and display properties
+    function fetchProperties() {
+        fetch('./server/get-properties.php')
+            .then(response => response.json())
+            .then(properties => {
+                displayProperties(properties);
+            })
+            .catch(error => console.error('Error fetching properties:', error));
+    }
+
+    // Function to display properties as cards
+    function displayProperties(properties) {
+        propertiesContainer.innerHTML = ''; // Clear previous content
+        properties.forEach(property => {
+            const card = document.createElement('div');
+            card.className = 'property-card';
+            card.innerHTML = `
+                <h3>${property.address}</h3>
+                <p>Type: ${property.type}</p>
+                <p>Price: $${property.price} per month</p>
+            `;
+            propertiesContainer.appendChild(card);
+        });
+    }
+
+    // Event listener for form submission (search)
+    searchForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const formData = new FormData(searchForm);
+        const searchParams = new URLSearchParams(formData).toString();
+
+        fetch(`./server/get-properties.php?${searchParams}`)
+            .then(response => response.json())
+            .then(properties => {
+                displayProperties(properties);
+            })
+            .catch(error => console.error('Error searching properties:', error));
+    });
+
+    // Initial fetch of properties when the page loads
+    fetchProperties();
+});
