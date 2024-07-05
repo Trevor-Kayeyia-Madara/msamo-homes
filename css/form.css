@@ -1,94 +1,122 @@
-/* Reset default browser styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    background: #333;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 24px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.hamburger-menu .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100%;
+    background: #444;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    transition: left 0.3s ease;
+    z-index: 999;
+    padding-top: 60px;
+}
+
+.sidebar ul {
+    list-style: none;
     padding: 20px;
 }
 
-h2 {
-    color: #007bff;
+.sidebar ul li {
     margin-bottom: 20px;
 }
 
-#property-form {
-    max-width: 600px; /* Set a maximum width for the form */
-    margin: 0 auto; /* Center the form horizontally */
-    background-color: #ffffff; /* Optional: Add a background color */
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    transition: background 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background: #555;
+}
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    background-color: #fff;
     padding: 20px;
-    border: 1px solid #ddd; /* Optional: Add a border */
-    border-radius: 8px; /* Optional: Add border radius */
-}
-
-.form-group {
-    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin-top: 50px;
 }
 
 label {
     display: block;
+    margin-bottom: 8px;
     font-weight: bold;
-    margin-bottom: 5px;
 }
 
-select,
-textarea,
-input[type="number"],
 input[type="text"],
-input[type="file"] {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-textarea {
-    resize: vertical; /* Allow vertical resizing of textarea */
-}
 input[type="number"],
-input[type="tel"] {
-    width: 100%;
+select {
+    width: calc(100% - 22px);
     padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
     border-radius: 4px;
 }
-h2 {
-    color: #02346d;
-    margin-bottom: 20px;
-    font-size: 24px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
 
-.center {
-    text-align: center; /* Center align the heading */
-}
-.back-link {
-    display: block;
-    margin-bottom: 20px;
-    color: #007bff; /* Blue color for link */
-    text-decoration: none; /* Remove default underline */
-}
-.back-link svg {
-    vertical-align: middle; /* Align the icon vertically */
-    margin-right: 5px; /* Space between icon and text */
-}
-button[type="submit"] {
-    background-color: #007bff;
-    color: white;
-    padding: 12px 20px;
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
     border: none;
     border-radius: 4px;
-    cursor: pointer;
+    color: #fff;
     font-size: 16px;
+    cursor: pointer;
 }
 
-button[type="submit"]:hover {
-    background-color: #0056b3;
+input[type="submit"]:hover {
+    background-color: #218838;
 }
